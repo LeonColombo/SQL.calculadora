@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".interfaz.MainActivity">
+
+    <EditText
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:hint="Nro1"
+    android:id="@+id/edtNro1"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Nro2"
+        android:id="@+id/edtNro2"
+        android:layout_toRightOf="@+id/edtNro1"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:layout_below="@+id/edtNro1"
+        android:id="@+id/btnSuma"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+
+        android:id="@+id/btnMenos"
+
+        android:layout_toRightOf="@+id/btnSuma"
+        android:layout_below="@+id/edtNro2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="RESULTADO"
+        android:id="@+id/txtResultado"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="VER HISTORIAL"
+        android:id="@+id/btnHistorial"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
