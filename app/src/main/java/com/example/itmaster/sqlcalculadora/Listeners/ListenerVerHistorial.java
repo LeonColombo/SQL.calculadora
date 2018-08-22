@@ -19,5 +19,7 @@ public class ListenerVerHistorial implements View.OnClickListener {
 
         Intent intent = new Intent(this.context, ActivityList.class);
 
+        context.startActivity(intent);
+
     }
 }

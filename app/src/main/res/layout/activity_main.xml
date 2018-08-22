@@ -24,17 +24,19 @@
         android:layout_height="wrap_content"
         android:text="+"
         android:layout_below="@+id/edtNro1"
-        android:id="@+id/btnSuma"/>
+        android:id="@+id/btnSuma"
+        android:layout_marginTop="20dp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="-"
-
+        android:layout_marginTop="20dp"
         android:id="@+id/btnMenos"
 
         android:layout_toRightOf="@+id/btnSuma"
-        android:layout_below="@+id/edtNro2"/>
+        android:layout_below="@+id/edtNro2"
+        />
 
     <TextView
         android:layout_width="wrap_content"

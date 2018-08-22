@@ -8,15 +8,17 @@ import android.widget.TextView;
 
 import com.example.itmaster.sqlcalculadora.Listeners.ListenerResta;
 import com.example.itmaster.sqlcalculadora.Listeners.ListenerSuma;
+import com.example.itmaster.sqlcalculadora.Listeners.ListenerVerHistorial;
 import com.example.itmaster.sqlcalculadora.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnSuma, btnResta;
+    private Button btnSuma, btnResta, btnHistorial;
     private TextView resultado;
     private EditText edtNro1, edtNro2;
     private ListenerSuma listenerSuma;
     private ListenerResta listenerResta;
+    private ListenerVerHistorial listenerVerHistorial;
 
     public Button getBtnSuma() {
         return btnSuma;
@@ -80,6 +82,10 @@ public class MainActivity extends AppCompatActivity {
         btnSuma = findViewById(R.id.btnSuma);
         listenerSuma = new ListenerSuma(this);
         btnSuma.setOnClickListener(listenerSuma);
+
+        btnHistorial = findViewById(R.id.btnHistorial);
+        listenerVerHistorial = new ListenerVerHistorial (this);
+        btnHistorial.setOnClickListener(listenerVerHistorial);
 
 
         edtNro1 = findViewById(R.id.edtNro1);
