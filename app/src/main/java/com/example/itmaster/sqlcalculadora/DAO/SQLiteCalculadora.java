@@ -4,35 +4,65 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class SQLiteCalculadora extends SQLiteOpenHelper {
-    private static final String dbName = "CALCULADORA";
-    private static final Integer dbVersion = 1;
+import com.example.itmaster.sqlcalculadora.Controllers.ControladorOperacion;
+import com.example.itmaster.sqlcalculadora.Models.Operaciones;
+
+import static android.os.Build.ID;
+
+//public class SQLiteCalculadora extends SQLiteOpenHelper {
+//    private static final String dbName = "CALCULADORA";
+//    private static final Integer dbVersion = 1;
+//    private Context context;
+//    private SQLiteDatabase conexion;
+//
+//    public SQLiteCalculadora(Context context) {
+//        super(context, dbName, null, dbVersion);
+//    }
+//
+//    @Override
+//    public void onCreate(SQLiteDatabase db) {
+//        String query = "CREATE TABLE `operacion` ( `id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `operacion` TEXT NOT NULL )";
+//        db.execSQL(query); //creamos la tabla para guardar operaciones
+//    }
+//
+//    @Override
+//    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+//
+//    }
+//
+//    private void conectar(){
+//        conexion = getWritableDatabase(); //me da una tabla para escribir
+//
+//    }
+//    private void desconectar(){
+//        conexion.close();
+//
+//    public void guardarOperacion (String operacion);
+//}
+
+public class SQLiteCalculadora extends SQLiteOpenHelper{
     private Context context;
     private SQLiteDatabase conexion;
 
-    public SQLiteCalculadora(Context context) {
-        super(context, dbName, null, dbVersion);
+    private static final String DB_NAME = "CALCULADORA";
+    private static final Integer DB_VERSION = 1;
+
+    public SQLiteCalculadora(ControladorOperacion context) {
+        super(context, DB_NAME , null, DB_VERSION);
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
-        String query = "CREATE TABLE `operacion` ( `id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `operacion` TEXT NOT NULL )";
-        db.execSQL(query); //creamos la tabla para guardar operaciones
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+
+        String query = "CREATE TABLE `Operaciones` ( `ID` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE, `OPERACION` TEXT NOT NULL)";
+        sqLiteDatabase.execSQL(query);
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
-
-    private void conectar(){
-        conexion = getWritableDatabase(); //me da una tabla para escribir
-
-    }
-    private void desconectar(){
-        conexion = getWritableDatabase();
-
-    public void guardarOperacion (String operacion);
 }
 
 // Primero Creamos el modelo Operaciones
@@ -42,5 +72,6 @@ public class SQLiteCalculadora extends SQLiteOpenHelper {
 // creamos las dos STATIC FINAL dbVersion & dbName
 // Creamos el atributo Context y el atributo SQLiteDatabase para conectar
 
-//desde el Listener llamar al controlador en el OnCreate creando una objeto del Listener (Leo lo hizo en el SQLiteDAO:
+//desde el Listener llamar al controlador en el OnCreate creando una objeto del Listener
+// (Leo lo hizo en el SQLiteDAO:
 //
