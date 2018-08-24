@@ -5,6 +5,11 @@ public class Operaciones {
     private Integer Id;
     private String operacion;
 
+    public Operaciones(Integer id, String operacion) {
+        Id = id;
+        this.operacion = operacion;
+    }
+
     public Integer getId() {
         return Id;
     }

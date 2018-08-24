@@ -1,10 +1,11 @@
 package com.example.itmaster.sqlcalculadora.DAO;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.itmaster.sqlcalculadora.Controllers.ControladorOperacion;
+import com.example.itmaster.sqlcalculadora.Listeners.ListenerSuma;
 import com.example.itmaster.sqlcalculadora.Models.Operaciones;
 
 import static android.os.Build.ID;
@@ -47,8 +48,10 @@ public class SQLiteCalculadora extends SQLiteOpenHelper{
     private static final String DB_NAME = "CALCULADORA";
     private static final Integer DB_VERSION = 1;
 
-    public SQLiteCalculadora(ControladorOperacion context) {
+
+    public SQLiteCalculadora(Context context) {
         super(context, DB_NAME , null, DB_VERSION);
+        this.context = context; //para que me reemplace el atributo
     }
 
     @Override
@@ -61,6 +64,28 @@ public class SQLiteCalculadora extends SQLiteOpenHelper{
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+
+    }
+
+    private void conectar(){
+        conexion = getWritableDatabase();
+    }
+
+    private void desconectar(){
+        conexion.close();
+    }
+
+    public void guardarOperacionSinSql(Operaciones op){
+
+        this.conectar();
+        ContentValues fila = new ContentValues();
+
+        fila.put("operacion", op.getOperacion());
+
+        conexion.insert("Operaciones", null, fila);
+
+        this.desconectar();
+
 
     }
 }

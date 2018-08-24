@@ -4,11 +4,14 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.view.View;
 
+import com.example.itmaster.sqlcalculadora.DAO.SQLiteCalculadora;
+import com.example.itmaster.sqlcalculadora.Models.Operaciones;
 import com.example.itmaster.sqlcalculadora.interfaz.MainActivity;
 
 public class ListenerSuma implements View.OnClickListener {
     private MainActivity context;
-    private Context context;
+    private SQLiteCalculadora sqliteCalculadora;
+
 
     public ListenerSuma(MainActivity context) {
         this.context = context;
@@ -22,13 +25,14 @@ public class ListenerSuma implements View.OnClickListener {
         context.getResultado().setText(resultadoSuma.toString());
 
 
-    }
+
+        sqliteCalculadora = new SQLiteCalculadora (context);
+        Operaciones operacion = new Operaciones (null, String.valueOf(context.getEdtNro1().getText()) + " + " + String.valueOf(context.getEdtNro2().getText()) + " = " + String.valueOf(context.getResultado().getText()));
+        sqliteCalculadora.guardarOperacionSinSql(operacion);
 
 
-    public void guardarOperacion(String operacion);{
-        ContentValues row = new ContentValues();
-
-        row.put("operaciones", oper);
-        conexion.insert("operaciones", null, row);
     }
 }
+
+
+
