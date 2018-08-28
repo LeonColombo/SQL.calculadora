@@ -60,6 +60,6 @@ public class ActivityList extends AppCompatActivity {
         listViewOperaciones = findViewById(R.id.listaOper);
         listViewOperaciones.setAdapter(adapterOperaciones);
 
-
+//COMMIT
     }
 }
