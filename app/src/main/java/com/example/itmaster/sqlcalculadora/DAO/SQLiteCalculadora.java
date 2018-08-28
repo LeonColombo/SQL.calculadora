@@ -10,36 +10,7 @@ import com.example.itmaster.sqlcalculadora.Models.Operaciones;
 
 import static android.os.Build.ID;
 
-//public class SQLiteCalculadora extends SQLiteOpenHelper {
-//    private static final String dbName = "CALCULADORA";
-//    private static final Integer dbVersion = 1;
-//    private Context context;
-//    private SQLiteDatabase conexion;
-//
-//    public SQLiteCalculadora(Context context) {
-//        super(context, dbName, null, dbVersion);
-//    }
-//
-//    @Override
-//    public void onCreate(SQLiteDatabase db) {
-//        String query = "CREATE TABLE `operacion` ( `id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `operacion` TEXT NOT NULL )";
-//        db.execSQL(query); //creamos la tabla para guardar operaciones
-//    }
-//
-//    @Override
-//    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-//
-//    }
-//
-//    private void conectar(){
-//        conexion = getWritableDatabase(); //me da una tabla para escribir
-//
-//    }
-//    private void desconectar(){
-//        conexion.close();
-//
-//    public void guardarOperacion (String operacion);
-//}
+
 
 public class SQLiteCalculadora extends SQLiteOpenHelper{
     private Context context;
@@ -91,7 +62,7 @@ public class SQLiteCalculadora extends SQLiteOpenHelper{
 }
 
 // Primero Creamos el modelo Operaciones
-// Segundo Creamos la tabla con DBbrowser. Para hacer tabala de forma visual y sacar el String de creacion
+// Segundo Creamos la tabla con DBbrowser. Para hacer tabla de forma visual y sacar el String de creacion
 // Tercero Fuimos a DAO y creamos la clase que extiende de OpenHelper.
 // Metimos metodo y constructor (del constructor borramos todos los parametros de entrada y queda solo context)
 // creamos las dos STATIC FINAL dbVersion & dbName

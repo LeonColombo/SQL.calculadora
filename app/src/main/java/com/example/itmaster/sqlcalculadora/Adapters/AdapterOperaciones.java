@@ -45,10 +45,10 @@ public class AdapterOperaciones extends BaseAdapter {
         LayoutInflater miInfladorDeLayouts;
         miInfladorDeLayouts = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        view = miInfladorDeLayouts.inflate(R.layout.operaciones, viewGroup, false);
+        view = miInfladorDeLayouts.inflate(R.layout.activity_list, viewGroup, false);
 
         TextView stringOperacion;
-        stringOperacion = view.findViewById(R.id.stringoperacion);
+        stringOperacion = view.findViewById(R.id.listaOper);
 
         stringOperacion.setText((CharSequence) operacionesArrayList);
 
