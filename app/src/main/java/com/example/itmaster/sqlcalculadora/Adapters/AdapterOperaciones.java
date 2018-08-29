@@ -26,17 +26,17 @@ public class AdapterOperaciones extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return operacionesArrayList.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return null;
+        return operacionesArrayList.get(i);
     }
 
     @Override
     public long getItemId(int i) {
-        return 0;
+        return i;
     }
 
     @Override
@@ -45,12 +45,12 @@ public class AdapterOperaciones extends BaseAdapter {
         LayoutInflater miInfladorDeLayouts;
         miInfladorDeLayouts = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        view = miInfladorDeLayouts.inflate(R.layout.activity_list, viewGroup, false);
+        view = miInfladorDeLayouts.inflate(R.layout.operaciones, viewGroup, false);
 
         TextView stringOperacion;
-        stringOperacion = view.findViewById(R.id.listaOper);
+        stringOperacion = view.findViewById(R.id.stringoperacion);
 
-        stringOperacion.setText((CharSequence) operacionesArrayList);
+        stringOperacion.setText(operacionesArrayList.get(i).getOperacion());
 
         return view;
     }

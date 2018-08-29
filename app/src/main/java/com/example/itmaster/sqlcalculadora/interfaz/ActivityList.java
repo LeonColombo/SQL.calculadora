@@ -38,6 +38,8 @@ import java.util.ArrayList;
 //    }
 //}
 
+//
+
 public class ActivityList extends AppCompatActivity {
 
     private ArrayList<Operaciones> arrayList;
@@ -55,11 +57,11 @@ public class ActivityList extends AppCompatActivity {
 
         sqLiteCalculadora = new SQLiteCalculadora(this);
 
+        arrayList = sqLiteCalculadora.getOperaciones();
         adapterOperaciones = new AdapterOperaciones(arrayList, this);
 
         listViewOperaciones = findViewById(R.id.listaOper);
         listViewOperaciones.setAdapter(adapterOperaciones);
 
-//COMMIT
     }
 }
