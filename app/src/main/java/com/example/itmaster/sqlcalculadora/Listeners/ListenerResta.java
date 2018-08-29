@@ -26,7 +26,7 @@ public class ListenerResta implements View.OnClickListener{
         //        sqliteCalculadora.guardarOperacionSinSql(operacion);
 
         sqliteCalculadora = new SQLiteCalculadora(context);
-        Operaciones operacion = new Operaciones(null, String.valueOf(context.getEdtNro1().getText()) + " + " + String.valueOf(context.getEdtNro2().getText()) + " = " + String.valueOf(context.getResultado().getText()));
+        Operaciones operacion = new Operaciones(null, String.valueOf(context.getEdtNro1().getText()) + " - " + String.valueOf(context.getEdtNro2().getText()) + " = " + String.valueOf(context.getResultado().getText()));
         sqliteCalculadora.guardarOperacionSinSql(operacion);
     }
 }
